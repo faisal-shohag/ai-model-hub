@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Banner from "./components/Banner";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
@@ -7,14 +7,14 @@ import NavBar from "./components/NavBar";
 
 const getModel = async () => {
   const res = await fetch("/models.json");
-  return await res.json();
+  return res.json();
 };
 
 const modelPromise = getModel();
 
 function App() {
   const [activeTab, setActiveTab] = useState("model");
-  const [carts, setCarts] = useState([])
+  const [carts, setCarts] = useState([]);
 
   return (
     <>
@@ -25,7 +25,7 @@ function App() {
         <input
           type="radio"
           name="my_tabs_1"
-          className={`tab rounded-full w-50 ${activeTab === "model" && 'bg-linear-to-r from-pink-500 to-red-500 text-white'}`}
+          className={`tab rounded-full w-50 ${activeTab === "model" && "bg-linear-to-r from-pink-500 to-red-500 text-white"}`}
           aria-label="Models"
           defaultChecked
           onClick={() => setActiveTab("model")}
@@ -33,15 +33,17 @@ function App() {
         <input
           type="radio"
           name="my_tabs_1"
-             className={`tab rounded-full w-50 ${activeTab === "cart" && 'bg-linear-to-r from-pink-500 to-red-500 text-white'}`}
+          className={`tab rounded-full w-50 ${activeTab === "cart" && "bg-linear-to-r from-pink-500 to-red-500 text-white"}`}
           aria-label={`Cart (${carts.length})`}
           onClick={() => setActiveTab("cart")}
         />
       </div>
 
-      {activeTab === "model" && <Models modelPromise={modelPromise}  carts={carts} setCarts={setCarts}/>}
+      {activeTab === "model" && (
+        <Models modelPromise={modelPromise} carts={carts} setCarts={setCarts} />
+      )}
 
-      {activeTab === "cart" && <Cart carts={carts} setCarts={setCarts}/>}
+      {activeTab === "cart" && <Cart carts={carts} setCarts={setCarts} />}
 
       <Footer />
     </>

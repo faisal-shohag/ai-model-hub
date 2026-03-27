@@ -16,13 +16,13 @@ const ModelCard = ({ model,  carts, setCarts }) => {
   };
 
   return (
-    <div className="group card shadow-lg border border-zinc-300  rounded-3xl overflow-hidden">
+    <div className="shadow-lg border border-zinc-300  rounded-3xl overflow-hidden">
       {/* Image */}
-      <div className="relative h-56 bg-zinc-200 flex items-center justify-center overflow-hidden">
+      <div className="relative h-56 bg-zinc-200 flex items-center justify-center">
         <img
           src={model.image}
           alt={model.title}
-          className="h-40 w-40 object-contain transition-transform group-hover:scale-110 duration-500"
+          className="h-40 w-40 object-contain"
         />
 
         {/* Status Badge */}

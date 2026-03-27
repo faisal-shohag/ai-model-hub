@@ -1,4 +1,4 @@
-import { ShoppingCart } from "lucide-react";
+
 
 const NavBar = () => {
   return (
@@ -15,8 +15,7 @@ const NavBar = () => {
     </ul>
   </div>
   <div className="navbar-end gap-5">
-    <a className="btn btn-circle  text-red-500"><ShoppingCart size={20}/></a>
-    <a className="btn bg-red-500 rounded-full text-white">Get Started</a>
+    <a className="btn bg-red-500 rounded-full text-white">Get in Touch</a>
   </div>
 </div>
   );

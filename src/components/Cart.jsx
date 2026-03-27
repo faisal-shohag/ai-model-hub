@@ -80,7 +80,7 @@ const Cart = ({ carts, setCarts }) => {
                 setCarts([])
                 toast.success("Payment successful!")
             }}
-              className="w-full mt-8 bg-red-600 hover:bg-red-500 active:bg-red-700 transition-all py-5 rounded-2xl  text-2xl font-semibold shadow-xl shadow-red-500/30 text-white"
+              className="w-full mt-8 bg-red-600 hover:bg-red-500 activenav:bg-red-700 transition-all py-5 rounded-2xl  text-2xl font-semibold shadow-xl shadow-red-500/30 text-white"
             >
               Proceed to Checkout
             </button>
